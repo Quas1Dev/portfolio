@@ -7,10 +7,10 @@
 :root {
     --black: #191919;
     --darkgreen: #333F47;
-
+    --white: #eeeeee;
     font-family: 'Itim', cursive;
     font-size: 25px;
-    color: white;
+    color: var(--white);
 
     background-color: var(--black);
 }
@@ -54,7 +54,7 @@
 }
 
 .page_top--social_media a {
-    color: white;
+    color: var(--white);
 }
 
 .page_body {
@@ -90,7 +90,7 @@
     height: 28px;
 
     background: #7F8C9B;
-    color: white;
+    color: var(--white);
 
     border: none;
 }
@@ -109,7 +109,7 @@
 
 .post_content a {
     text-decoration: underline;
-    color: white;
+    color: var(--white);
 }
 
 .section--technologies {
@@ -119,7 +119,7 @@
 .technologies--technology {
     width: 45px;
     height: 50px;
-    fill: white !important;
+    fill: white;
 }
 
 .page_footer {
@@ -171,7 +171,7 @@
     height: 28px;
 
     background: #7F8C9B;
-    color: white;
+    color: var(--white);
 
     border: none;
 }
