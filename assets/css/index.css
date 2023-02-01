@@ -1,0 +1,146 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #191919;
+    --darkgreen: #333F47;
+
+    font-family: 'Itim', cursive;
+    font-size: 25px;
+    color: white;
+
+    background-color: var(--black);
+}
+
+.page_container {
+    max-width: 1200px;
+
+    padding: 32px;
+    margin: auto;
+}
+
+.page_top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.page_top--profile_picture {
+    width: 123px;
+    height: 123px;
+    background-color: var(--darkgreen);
+    background-image: url("../images/profile-pic.jpg");
+    background-size: cover;
+    background-position: center;
+
+    border-radius: 50%;
+}
+
+.page_title {
+    font-size: 1rem;
+
+    margin-top: 18px;
+}
+
+.page_top--social_media {
+    margin-top: 6px;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.page_top--social_media a {
+    color: white;
+}
+
+.page_body {
+    margin-top: 26px;
+    padding: 36px;
+    background-color: var(--darkgreen);
+}
+
+.section--subtitle {
+    font-size: 0.98rem;
+}
+
+.post--title {
+    margin-top: 18px;
+
+    font-size: 0.85rem
+}
+
+.post_content p {
+    font-size: 0.80rem;
+    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.section--technologies {
+    margin: 19px 0;
+}
+
+.technologies--technology {
+    width: 45px;
+    height: 50px;
+    fill: white !important;
+}
+
+.page_footer {
+    text-align: center;
+}
+
+.contact_form {
+    max-width: 500px;
+}
+
+.contact_form--field_name {
+    display: block;
+
+    font-size: 0.80rem;
+
+    margin-top: 8px;
+}
+
+.contact_form--field {
+    display: block;
+    max-width: 300px;
+    height: 27px;
+
+    background: #7F8C9B;
+
+    border: none;
+    border-radius: 5px;
+}
+
+.contact_form--textarea {
+    display: block;
+    width: 100%;
+    height: 200px;
+
+    border: none;
+    background: #7F8C9B;
+
+    border-radius: 5px;
+}
+
+.contact_form--submmit {
+    width: 51px;
+    height: 28px;
+
+    background: #7F8C9B;
+    color: white;
+
+    border: none;
+}
+
+.page_footer--signed {
+    font-size: 0.7rem;
+}
+
+.page_footer--signed i {
+    color: red;
+}
