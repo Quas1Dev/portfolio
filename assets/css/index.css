@@ -71,6 +71,30 @@
     font-size: 0.98rem;
 }
 
+.section--carousel_hidder {
+    overflow: hidden;
+}
+
+.section--carousel {
+    position: relative;
+    display: flex;
+    
+}
+
+.section--post {
+    min-width: 100%;
+}
+
+.carousel_contollers {
+    width: 51px;
+    height: 28px;
+
+    background: #7F8C9B;
+    color: white;
+
+    border: none;
+}
+
 .post--title {
     margin-top: 18px;
 

@@ -2,6 +2,7 @@
 ---
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,6 +15,7 @@
 
   <script src="https://kit.fontawesome.com/c72d3abc48.js" crossorigin="anonymous"></script>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
   <title>Fernando Bonfim</title>
 </head>
 
@@ -21,7 +23,7 @@
   <div class="page_container">
     <header class="page_top">
       <div class="page_top--profile_picture">
-        
+
       </div>
 
       <h1 class="page_title">Fernando Bonfim</h1>
@@ -39,15 +41,22 @@
     <div class="page_body">
       <section class="page_body--section">
         <h2 class="section--subtitle">Projects</h2>
-        {% for post in site.posts%}
-        <div class="section--post">
-          <h3 class="post--title">{{ post.title }}</h3>
-          <div class="post_content">
-            {{ post.content }}
+        <div class="section--carousel_hidder">
+          <div class="section--carousel">
+            {% for post in site.posts %}
+            <div class="section--post">
+              <h3 class="post--title">{{ post.title }}</h3>
+              <div class="post_content">
+                {{ post.content }}
+              </div>
+            </div>
+            {% endfor %}
           </div>
         </div>
-        {% endfor %}
+        <button class="carousel_contollers carousel_prev">Prev</button>
+        <button class="carousel_contollers carousel_next">Next</button>
       </section>
+
       <section class="page_body--section">
         <h2 class="section--subtitle">Technologies</h2>
         <div class="section--technologies">
@@ -109,7 +118,7 @@
           </svg>
         </div>
       </section>
-
+      <!-- Contact section -->
       <section class="page_body--section">
         <h2 class="section--subtitle">Message me :)</h2>
         <form action="https://formspree.io/f/xzbqdkbq" method="post" class="contact_form" id="contact_form"">
@@ -123,8 +132,9 @@
           <label for="message" class="contact_form--field_name">Message</label>
           <textarea id="message" name="message" rows="4" cols="50" class="contact_form--textarea"></textarea>
 
-          <div class="g-recaptcha" style="margin-top: 16px; margin-bottom: 16px; display: block;" id="contact_form--ecaptcha" data-sitekey="6LduQkIkAAAAAMKnXhjG8waDi2dLv7fccQjeabUd"></div>
-          
+          <div class="g-recaptcha" style="margin-top: 16px; margin-bottom: 16px; display: block;"
+            id="contact_form--ecaptcha" data-sitekey="6LduQkIkAAAAAMKnXhjG8waDi2dLv7fccQjeabUd"></div>
+
           <button class="contact_form--submmit">Send</button>
         </form>
         <span id="contact_form_status"></span>
@@ -144,7 +154,7 @@
       event.preventDefault();
       var status = document.getElementById("contact_form_status");
       var data = new FormData(event.target);
-      
+
       fetch(event.target.action, {
         method: form.method,
         body: data,
@@ -169,6 +179,38 @@
       });
     }
     form.addEventListener("submit", handleSubmit)
+  </script>
+  <script>
+    const carousel = document.querySelector('.section--carousel');
+    const slides = Array.from(carousel.children);
+    const carouselWidth = carousel.clientWidth;
+    const prevButton = document.querySelector('.carousel_prev');
+    const nextButton = document.querySelector('.carousel_next');
+
+    let currentSlide = 0;
+    slides[currentSlide].classList.add('active');
+
+    prevButton.addEventListener('click', () => {
+      console.log("Handling click")
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      slides[currentSlide].classList.add('active');
+      move();
+    });
+
+    nextButton.addEventListener('click', () => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+      move();
+    });
+
+    function move() {
+      console.log("Moving by " + (currentSlide * carouselWidth))
+      const amountToMove = currentSlide * carouselWidth;
+      carousel.style.left = -amountToMove + "px";
+    }
+
   </script>
 </body>
 
