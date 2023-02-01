@@ -107,6 +107,11 @@
     margin: 10px 0;
 }
 
+.post_content a {
+    text-decoration: underline;
+    color: white;
+}
+
 .section--technologies {
     margin: 19px 0;
 }
