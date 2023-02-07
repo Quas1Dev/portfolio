@@ -78,7 +78,7 @@
 .section--carousel {
     position: relative;
     display: flex;
-    
+
 }
 
 .section--post {
@@ -101,11 +101,15 @@
     font-size: 0.85rem
 }
 
+.post_content {
+    font-size: 0.74rem;
+}
+
 .post_content p {
-    font-size: 0.80rem;
     line-height: 1.5;
     margin: 10px 0;
 }
+
 
 .post_content a {
     text-decoration: underline;
