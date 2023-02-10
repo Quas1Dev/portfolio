@@ -86,6 +86,8 @@
 }
 
 .carousel_contollers {
+    cursor: pointer;
+
     width: 51px;
     height: 28px;
 
