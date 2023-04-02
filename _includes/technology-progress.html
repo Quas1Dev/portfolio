@@ -1,0 +1,11 @@
+<div class="my-progress">
+    <div class="my-progress__technology" data-level="{{ include.level }}">
+        {% assign svg_content = include.svg %}
+      {{ svg_content | replace: '<svg', '<svg class="my-progress__technology-icon"' }}
+  
+      <div class="my-progress__progress-bar-container">
+        <div class="my-progress__progress-bar"></div>
+      </div>
+    </div>
+  </div>
+  
