@@ -9,6 +9,7 @@
     --darkgray: #333F47;
     --lightgray: #7F8C9B;
     --white: #eeeeee;
+    --red: red;
     --progress-bar-bg: #f0f0f0;
     --progress-bar-color: #F78E69;
     --progress-bar-gradient: linear-gradient(to right, var(--progress-bar-color), var(--darkgray));
@@ -244,5 +245,5 @@
 }
 
 .page_footer--signed i {
-    color: red;
+    color: var(--red);
 }
