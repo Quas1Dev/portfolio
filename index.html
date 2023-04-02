@@ -45,7 +45,8 @@
           <div class="section--carousel">
             {% for post in site.posts %}
             <div class="section--post">
-              <h3 class="post--title">{{ post.title }}</h3>
+              <h3 class="post--title">Project {{ forloop.index }} of {{ forloop.length }}:  {{
+                post.title }}</h3>
               <div class="post_content">
                 {{ post.content }}
               </div>
