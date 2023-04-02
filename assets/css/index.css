@@ -8,10 +8,13 @@
     --black: #191919;
     --darkgreen: #333F47;
     --white: #eeeeee;
+    --progress-bar-bg: #f0f0f0;
+    --progress-bar-color: #F78E69;
+    --progress-bar-gradient: linear-gradient(to right, var(--progress-bar-color), var(--darkgreen));
+    
     font-family: 'Itim', cursive;
     font-size: 25px;
     color: var(--white);
-
     background-color: var(--black);
 }
 
@@ -120,12 +123,58 @@
 
 .section--technologies {
     margin: 19px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
 }
 
-.technologies--technology {
+.my-progress__technology {
+    flex-basis: 400px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.my-progress__technology-icon {
     width: 45px;
     height: 50px;
     fill: white;
+}
+
+.my-progress__progress-bar-container {
+    min-width: 200px;
+    height: 15px;
+    border-radius: 5px;
+    margin-left: 12px;
+    background-color: #f0f0f0;
+}
+
+.my-progress__progress-bar {
+    width: 100%;
+    height: 15px;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    background-image: linear-gradient(to right, #F78E69, #F0B07F, #F78E69);
+    background-size: 200% 100%;
+    background-position: left center;
+    transition: all 0.4s ease-out;
+}
+
+.my-progress__technology[data-level="Advanced"] .my-progress__progress-bar {
+    width: 90%;
+    background-position: right center;
+}
+
+.my-progress__technology[data-level="Intermediate"] .my-progress__progress-bar {
+    width: 60%;
+    background-position: right center;
+}
+
+.my-progress__technology[data-level="Basic"] .my-progress__progress-bar {
+    width: 40%;
+    background-position: right center;
 }
 
 .page_footer {
