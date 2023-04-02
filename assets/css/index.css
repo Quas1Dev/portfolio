@@ -6,12 +6,13 @@
 
 :root {
     --black: #191919;
-    --darkgreen: #333F47;
+    --darkgray: #333F47;
+    --lightgray: #7F8C9B;
     --white: #eeeeee;
     --progress-bar-bg: #f0f0f0;
     --progress-bar-color: #F78E69;
-    --progress-bar-gradient: linear-gradient(to right, var(--progress-bar-color), var(--darkgreen));
-    
+    --progress-bar-gradient: linear-gradient(to right, var(--progress-bar-color), var(--darkgray));
+
     font-family: 'Itim', cursive;
     font-size: 25px;
     color: var(--white);
@@ -35,7 +36,7 @@
 .page_top--profile_picture {
     width: 123px;
     height: 123px;
-    background-color: var(--darkgreen);
+    background-color: var(--darkgray);
     background-image: url("../images/profile-pic.jpg");
     background-size: cover;
     background-position: center;
@@ -63,11 +64,11 @@
 .page_body {
     margin-top: 26px;
     padding: 36px;
-    background-color: var(--darkgreen);
+    background-color: var(--darkgray);
 }
 
 .page_body--section {
-    margin-top: 24px;
+    margin-top: 50px;
 }
 
 .section--subtitle {
@@ -94,7 +95,7 @@
     width: 51px;
     height: 28px;
 
-    background: #7F8C9B;
+    background: var(--lightgray);
     color: var(--white);
 
     border: none;
@@ -155,7 +156,7 @@
     width: 100%;
     height: 15px;
     border-radius: 5px;
-    background-color: #f0f0f0;
+    background-color: var(--lightgray);
     background-image: linear-gradient(to right, #F78E69, #F0B07F, #F78E69);
     background-size: 200% 100%;
     background-position: left center;
@@ -198,7 +199,7 @@
     max-width: 300px;
     height: 27px;
 
-    background: #7F8C9B;
+    background: var(--lightgray);
 
     margin-top: 5px;
     padding: 5px;
@@ -213,7 +214,7 @@
     height: 200px;
 
     border: none;
-    background: #7F8C9B;
+    background: var(--lightgray);
 
     margin-top: 5px;
     padding: 5px;
@@ -225,7 +226,7 @@
     width: 51px;
     height: 28px;
 
-    background: #7F8C9B;
+    background: var(--lightgray);
     color: var(--white);
 
     border: none;
