@@ -1,9 +1,9 @@
 var gulp = require('gulp');
+var sass = require('sass');
 var csso = require('gulp-csso');
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
-var sass = require('gulp-sass');
 var plumber = require('gulp-plumber');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
 var cp = require('child_process');
 var imagemin = require('gulp-imagemin');
 var browserSync = require('browser-sync');
@@ -45,7 +45,7 @@ gulp.task('browser-sync', gulp.series(['jekyll-build'], function(done) {
 gulp.task('sass', function() {
   return gulp.src('src/styles/**/*.scss')
     .pipe(plumber())
-    .pipe(sass())
+    .pipe(sass.sync().on('error', sass.logError))
     .pipe(csso())
 		.pipe(gulp.dest('assets/css/'))
 });
