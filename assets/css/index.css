@@ -31,6 +31,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: -140px;
+    background: var(--white);
+    padding-top: 10px;
 }
 
 .page_top--profile_picture {
@@ -69,6 +72,10 @@
 
 .page_body--section {
     margin-top: 50px;
+}
+
+.page_body--section:first-child {
+    margin-top: 90px;
 }
 
 .section--subtitle {
