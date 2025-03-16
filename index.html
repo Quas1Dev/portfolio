@@ -129,7 +129,6 @@
   <script>
     const carousel = document.querySelector('.section--carousel');
     const slides = Array.from(carousel.children);
-    const carouselWidth = carousel.clientWidth;
     const prevButton = document.querySelector('.carousel_prev');
     const nextButton = document.querySelector('.carousel_next');
 
@@ -152,11 +151,13 @@
     });
 
     function move() {
-      console.log("Moving by " + (currentSlide * carouselWidth))
-      const amountToMove = currentSlide * carouselWidth;
+      console.log("Moving by " + (currentSlide * carousel.clientWidth))
+      const amountToMove = currentSlide * carousel.clientWidth;
       carousel.style.left = -amountToMove + "px";
     }
 
+    // Atualiza a posição ao redimensionar a janela
+    window.addEventListener('resize', move);
   </script>
 </body>
 
