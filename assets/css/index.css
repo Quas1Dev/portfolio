@@ -77,14 +77,11 @@
 
 .page_body--section:first-child {
     margin-top: 90px;
+    overflow: hidden;
 }
 
 .section--subtitle {
     font-size: 0.98rem;
-}
-
-.section--carousel_hidder {
-    overflow: hidden;
 }
 
 .section--carousel {

@@ -41,7 +41,7 @@
     <div class="page_body">
       <section class="page_body--section">
         <h2 class="section--subtitle">Projects</h2>
-        <div class="section--carousel_hidder">
+      
           <div class="section--carousel">
             {% for post in site.posts %}
             <article class="section--post">
@@ -53,7 +53,6 @@
             </article>
             {% endfor %}
           </div>
-        </div>
         <button class="carousel_contollers carousel_prev">Prev</button>
         <button class="carousel_contollers carousel_next">Next</button>
       </section>
@@ -136,7 +135,6 @@
     slides[currentSlide].classList.add('active');
 
     prevButton.addEventListener('click', () => {
-      console.log("Handling click")
       slides[currentSlide].classList.remove('active');
       currentSlide = (currentSlide - 1 + slides.length) % slides.length;
       slides[currentSlide].classList.add('active');
@@ -151,7 +149,6 @@
     });
 
     function move() {
-      console.log("Moving by " + (currentSlide * carousel.clientWidth))
       const amountToMove = currentSlide * carousel.clientWidth;
       carousel.style.left = -amountToMove + "px";
     }
