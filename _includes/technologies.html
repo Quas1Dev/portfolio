@@ -149,44 +149,57 @@ svg="<svg role='img' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
 level="Basic"
 %}
 
+<!-- Can't place this code in technology-progress.html 
+because this would generate a copy of this for progress bar. 
+-->
 <script>
     window.addEventListener('DOMContentLoaded', function () {
-        var progressBar = document.querySelector('.my-progress__progress-bar');
-        var progressBarContainer = document.querySelector('.my-progress__progress-bar-container');
-        var sectionInView = false;
-        var progress = 0;
-
-        window.addEventListener('scroll', function () {
-            var windowHeight = window.innerHeight;
-            var scrollTop = window.pageYOffset;
-            var sectionOffsetTop = document.querySelector('#my-progress').offsetTop;
-
-            if (scrollTop + windowHeight > sectionOffsetTop && !sectionInView) {
-                sectionInView = true;
-                animateProgressBar();
-            }
-        });
-
-        function animateProgressBar() {
-            var animationId = null;
-
-            function step(timestamp) {
-                if (!progress) {
-                    progress = 1;
-                } else if (progress < 80) {
-                    progress += 1;
-                } else {
-                    cancelAnimationFrame(animationId);
+        const section = document.querySelector('.section--technologies');
+        const progressBars = document.querySelectorAll('.my-progress__progress-bar');
+        
+        // Mapeamento dos níveis para porcentagens
+        const LEVELS = {
+            'Advanced': 90,
+            'Intermediate': 60,
+            'Basic': 40
+        };
+    
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    progressBars.forEach(progressBar => {
+                        const technologyDiv = progressBar.closest('.my-progress__technology');
+                        const textLevel = technologyDiv.dataset.level; // Ex: "Advanced"
+                        const targetLevel = LEVELS[textLevel]; // Converte para 90
+                        animateProgressBar(progressBar, targetLevel);
+                    });
+                    observer.unobserve(section);
                 }
-
-                progressBar.style.width = progress + '%';
-
-                if (progress < 80) {
-                    animationId = requestAnimationFrame(step);
-                }
-            }
-
-            animationId = requestAnimationFrame(step);
-        }
+            });
+        }, { threshold: 0.01 });
+    
+        observer.observe(section);
     });
-</script>
+    
+    function animateProgressBar(progressBar, targetLevel) {
+        let progress = 0;
+        const duration = 2000; // 2 segundos para todas as animações
+    
+        const startTime = Date.now();
+    
+        function animate() {
+            const elapsed = Date.now() - startTime;
+            progress = (elapsed / duration) * 100; // Vai de 0 a 100% no tempo total
+    
+            // Atualiza a largura, mas não ultrapassa o targetLevel
+            const currentWidth = Math.min(progress, targetLevel);
+            progressBar.style.width = `${currentWidth}%`;
+    
+            if (progress < 100 && currentWidth < targetLevel) {
+                requestAnimationFrame(animate);
+            }
+        }
+    
+        requestAnimationFrame(animate);
+    }
+      </script>

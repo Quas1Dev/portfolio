@@ -130,6 +130,7 @@
 .section--technologies {
     margin: 19px 0;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
     align-items: center;
@@ -137,7 +138,7 @@
 }
 
 .my-progress__technology {
-    flex-basis: 400px;
+    flex-basis: 250px;
     display: flex;
     align-items: center;
     margin-bottom: 10px;
@@ -158,7 +159,7 @@
 }
 
 .my-progress__progress-bar {
-    width: 100%;
+    width: 0;
     height: 15px;
     border-radius: 5px;
     background-color: var(--lightgray);
@@ -169,17 +170,17 @@
 }
 
 .my-progress__technology[data-level="Advanced"] .my-progress__progress-bar {
-    width: 90%;
+    /* width: 90%; */
     background-position: right center;
 }
 
 .my-progress__technology[data-level="Intermediate"] .my-progress__progress-bar {
-    width: 60%;
+    /* width: 60%; */
     background-position: right center;
 }
 
 .my-progress__technology[data-level="Basic"] .my-progress__progress-bar {
-    width: 40%;
+    /* width: 40%; */
     background-position: right center;
 }
 
